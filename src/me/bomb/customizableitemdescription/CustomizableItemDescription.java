@@ -17,6 +17,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -36,9 +37,9 @@ import net.minecraft.server.v1_12_R1.PacketPlayOutWindowItems;
 import net.minecraft.server.v1_12_R1.PacketPlayInSetCreativeSlot;
 
 public class CustomizableItemDescription extends JavaPlugin implements Listener {
-	
+
 	private YamlConfiguration lang;
-	
+
 	public void onEnable() {
 		if (!new File(getDataFolder() + File.separator + "lang.yml").exists()) {
 			saveResource("lang.yml", true);
@@ -49,24 +50,23 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			registerHandler(player);
 		}
 	}
-	
+
 	public void onDisable() {
 		for(Player player : Bukkit.getOnlinePlayers()) {
 			unregisterHandler(player);
 		}
 	}
-	
+
 	protected void clear(ItemStack itemstack) {
 		if(!itemstack.getType().equals(Material.AIR)) {
 			ItemMeta meta = itemstack.getItemMeta();
 			if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
 				List<String> lore = new ArrayList<String>();
-				int i = 0;
-				boolean unreallore = false;
-				while(!unreallore && i<meta.getLore().size()) {
+				short i = 0;
+				while(i<meta.getLore().size()) {
 					String line = meta.getLore().get(i);
-					if(line.equals("§f§f§f§r")) {
-						unreallore = true;
+					if(line.startsWith("§f§f§f§r")) {
+						break;
 					} else {
 						lore.add(line);
 					}
@@ -77,78 +77,98 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			}
 		}
 	}
-	
-	protected void deeper(ItemStack itemstack) {
+
+	protected void deeper(net.minecraft.server.v1_12_R1.ItemStack nmsitem) {
+		ItemStack itemstack = nmsitem.asBukkitMirror();
 		if(!itemstack.getType().equals(Material.AIR)) {
+			ItemMeta meta = itemstack.getItemMeta();
+			boolean hoa = false;
+			List<String> infolore = new ArrayList<String>();
 			if(itemstack.getType().equals(Material.POTION) || itemstack.getType().equals(Material.SPLASH_POTION) || itemstack.getType().equals(Material.LINGERING_POTION) || itemstack.getType().equals(Material.TIPPED_ARROW)) {
-				PotionMeta meta = (PotionMeta) itemstack.getItemMeta();
-				List<PotionEffect> effects = getPotionEffects(meta);
+				PotionMeta potionmeta = (PotionMeta) itemstack.getItemMeta();
+				List<PotionEffect> effects = getPotionEffects(potionmeta);
 				if(!effects.isEmpty()) {
-					List<String> lore = new ArrayList<String>();
-					if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
-						lore = meta.getLore();
-					}
-					lore.add("§f§f§f§r");
-					boolean oneadded = false;
+					hoa = true;
 					meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
 					for(PotionEffect effect : effects) {
-						if(effect.getDuration()>0) {
+						if(effect.getDuration()>0 && effect.getAmplifier()>-1) {
 							short amplifier = (short) effect.getAmplifier();
-							if(amplifier<0) amplifier = 0;
 							++amplifier;
-							int duration = effect.getDuration();
-							if(itemstack.getType().equals(Material.LINGERING_POTION)) duration=duration>>2;
-							if(itemstack.getType().equals(Material.TIPPED_ARROW)) duration=duration>>3;
+							short duration = (short) effect.getDuration();
+							if(itemstack.getType().equals(Material.LINGERING_POTION)) duration=(short) (duration>>2);
+							if(itemstack.getType().equals(Material.TIPPED_ARROW)) duration=(short) (duration>>3);
 							String effectname = effect.getType().getName();
 							String ramplifier = RomanNumeral.getwithspace(amplifier);
 							String rduration = getTimeLeftFromTicks(duration);
-							lore.add(lang.getString("effects.".concat(effectname), "§4".concat(effectname).concat(ramplifier).concat(" ").concat(rduration)).replaceAll("%amplifier%", ramplifier).replaceAll("%duration%", rduration));
-							oneadded = true;
-						}
-					}
-					if(oneadded) {
-						lore.set(lore.size()-1, lore.get(lore.size()-1).concat("§0§0§0§r"));
-						meta.setLore(lore);
-						itemstack.setItemMeta(meta);
-					}
-				}
-			} else {
-				ItemMeta meta = itemstack.getItemMeta();
-				if(meta.hasEnchants()) {
-					List<String> lore = new ArrayList<String>();
-					if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
-						lore = meta.getLore();
-					}
-					lore.add("§f§f§f§r");
-					boolean oneadded = false;
-					meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-					Map<Enchantment,Integer> enchs = meta.getEnchants();
-					for(Enchantment ench : enchs.keySet()) {
-						short level = 0;
-						if(enchs.containsKey(ench)) {
-							level = enchs.get(ench).shortValue();
-							if(level>0) {
-								String rlevel = RomanNumeral.get(level);
-								String enchantmentname = ench.getName();
-								if(enchantmentname!=null && !enchantmentname.isEmpty()) {
-									lore.add(lang.getString("enchantments.".concat(enchantmentname), "§4".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
-									oneadded = true;
-								}
+							if(effectname!=null && !effectname.isEmpty()) {
+								infolore.add(lang.getString("effects.".concat(effectname), "§r".concat(effectname).concat(ramplifier).concat(" ").concat(rduration)).replaceAll("%amplifier%", ramplifier).replaceAll("%duration%", rduration));
 							}
 						}
 					}
-					if(oneadded) {
-						lore.set(lore.size()-1, lore.get(lore.size()-1).concat("§0§0§0§r"));
-						meta.setLore(lore);
-						itemstack.setItemMeta(meta);
+				}
+			}
+			if(itemstack.getType().equals(Material.ENCHANTED_BOOK)) {
+				hoa = true;
+				EnchantmentStorageMeta enchantmentmeta = (EnchantmentStorageMeta) meta;
+				meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+				Map<Enchantment,Integer> enchs = enchantmentmeta.getStoredEnchants();
+				for(Enchantment ench : enchs.keySet()) {
+					short level = 0;
+					if(enchs.containsKey(ench)) {
+						level = enchs.get(ench).shortValue();
+						if(level>0) {
+							String rlevel = RomanNumeral.get(level);
+							String enchantmentname = ench.getName();
+							if(enchantmentname!=null && !enchantmentname.isEmpty()) {
+								infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
+							}
+						}
 					}
 				}
 			}
+			if(meta.hasEnchants()) {
+				hoa = true;
+				meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+				Map<Enchantment,Integer> enchs = meta.getEnchants();
+				for(Enchantment ench : enchs.keySet()) {
+					short level = 0;
+					if(enchs.containsKey(ench)) {
+						level = enchs.get(ench).shortValue();
+						if(level>0) {
+							String rlevel = RomanNumeral.get(level);
+							String enchantmentname = ench.getName();
+							if(enchantmentname!=null && !enchantmentname.isEmpty()) {
+								infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
+							}
+						}
+					}
+				}
+			}
+			if(meta.isUnbreakable()) {
+				hoa = true;
+				meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+				infolore.add(lang.getString("unbreakable","§rUNBREAKABLE"));
+			}
+			if(hoa&&!infolore.isEmpty()) {
+				List<String> lore = new ArrayList<String>();
+				if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
+					lore = meta.getLore();
+				}
+				lore.add("§f§f§f§r".concat(infolore.get(0)));
+				byte i = 1;
+				while (i<infolore.size()&&i>0) {
+					lore.add(infolore.get(i));
+					++i;
+				}
+				lore.set(lore.size()-1, lore.get(lore.size()-1).concat("§0§0§0§r"));
+				meta.setLore(lore);
+				itemstack.setItemMeta(meta);
+			}
 		}
 	}
-	
+
 	private String getTimeLeftFromTicks(int duration) {
-		if(duration>32766) return "**:**";
+		if(duration<0||duration>32766) return "**:**";
 		duration = (short) (duration/20);
 		byte minutes = (byte) (duration/60);
 		byte seconds = (byte) (duration-minutes*60);
@@ -156,7 +176,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 		if(seconds<10) secondss = "0".concat(secondss);
 		return Byte.toString(minutes).concat(":").concat(secondss);
     }
-	
+
 	private List<PotionEffect> getPotionEffects(PotionMeta potion) {
 		PotionEffect effect = null;
 		PotionType potiontype = potion.getBasePotionData().getType();
@@ -298,7 +318,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 		}
 		return effects;
 	}
-	
+
 	private void registerHandler(Player player) {
 		ChannelDuplexHandler channelDuplexHandler = new ChannelDuplexHandler() {
 			@Override
@@ -326,7 +346,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			        packetdataserializer.writeShort(inventorysize);
 			        for (int i = 0; i < inventorysize; ++i) {
 			        	net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
-			        	deeper(item.asBukkitMirror());
+			        	deeper(item);
 			            packetdataserializer.a(item);
 			        }
 			        info.a(packetdataserializer);
@@ -338,7 +358,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 					packetdataserializer.writeByte(packetdataserializer.readUnsignedByte());
 					packetdataserializer.writeShort(packetdataserializer.readShort());
 					net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
-					deeper(item.asBukkitMirror());
+					deeper(item);
 			        packetdataserializer.a(item);
 					info.a(packetdataserializer);
 				}
@@ -356,7 +376,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			return null;
 		});
 	}
-	
+
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
 		registerHandler(e.getPlayer());
@@ -366,5 +386,5 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 	public void onQuit(PlayerQuitEvent e) {
 		unregisterHandler(e.getPlayer());
 	}
-	
+
 }
