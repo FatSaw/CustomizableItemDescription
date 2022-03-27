@@ -1,3 +1,4 @@
+unbreakable: "§d§lНеразрушаемый"
 enchantments:
   PROTECTION_ENVIRONMENTAL: "§e§lЗащита §b§l%value%"
   PROTECTION_FIRE: "§e§lОгнеупорность §b§l%value%"
