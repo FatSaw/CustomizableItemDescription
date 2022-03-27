@@ -151,7 +151,7 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			}
 			if(hoa&&!infolore.isEmpty()) {
 				List<String> lore = new ArrayList<String>();
-				if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
+				if(meta.hasLore()) {
 					lore = meta.getLore();
 				}
 				lore.add("§f§f§f§r".concat(infolore.get(0)));
