@@ -58,3 +58,151 @@ effects:
   GLOWING: "§a§lСвечение§b§l%amplifier% %duration%"
   LEVITATION: "§c§lЛевитация§b§l%amplifier% %duration%"
   UNLUCK: "§c§lНевезение§b§l%amplifier% %duration%"
+items:
+  STONE-0:
+    default: "§5§l[§e§lКамень§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-1:
+    default: "§5§l[§e§lГранит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-2:
+    default: "§5§l[§e§lПолированный гранит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-3:
+    default: "§5§l[§e§lДиорит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-4:
+    default: "§5§l[§e§lПолированный диорит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-5:
+    default: "§5§l[§e§lАндезит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE-6:
+    default: "§5§l[§e§lПолированный андезит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GRASS-0:
+    default: "§5§l[§e§lДёрн§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DIRT-0:
+    default: "§5§l[§e§lЗемля§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DIRT-1:
+    default: "§5§l[§e§lКаменистая земля§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DIRT-2:
+    default: "§5§l[§e§lПодзол§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COBBLESTONE-0:
+    default: "§5§l[§e§lБулыжник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-0:
+    default: "§5§l[§e§lДубовые доски§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-1:
+    default: "§5§l[§e§lЕловые доски§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-2:
+    default: "§5§l[§e§lБерёзовые доски§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-3:
+    default: "§5§l[§e§lДоски из тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-4:
+    default: "§5§l[§e§lАкациевые доски§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD-5:
+    default: "§5§l[§e§lДоски из тёмного дуба§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-0:
+    default: "§5§l[§e§lСаженец дуба§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-1:
+    default: "§5§l[§e§lЕловый саженец§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-2:
+    default: "§5§l[§e§lСаженец берёзы§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-3:
+    default: "§5§l[§e§lСаженец тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-4:
+    default: "§5§l[§e§lСаженец акации§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAPLING-5:
+    default: "§5§l[§e§lСаженец тёмного дуба§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BEDROCK-0:
+    default: "§5§l[§e§lБедрок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAND-0:
+    default: "§5§l[§e§lПесок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SAND-1:
+    default: "§5§l[§e§lКрасный песок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GRAVEL-0:
+    default: "§5§l[§e§lГравий§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GOLD_ORE-0:
+    default: "§5§l[§e§lЗолотая руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  IRON_ORE-0:
+    default: "§5§l[§e§lЖелезная руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COAL_ORE-0:
+    default: "§5§l[§e§lКаменный уголь§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LOG-0:
+    default: "§5§l[§e§lДуб§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LOG-1:
+    default: "§5§l[§e§lЕль§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LOG-2:
+    default: "§5§l[§e§lБерёза§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LOG-3:
+    default: "§5§l[§e§lТропическое дерево§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LEAVES-0:
+    default: "§5§l[§e§lДубовые листья§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LEAVES-1:
+    default: "§5§l[§e§lХвоя§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LEAVES-2:
+    default: "§5§l[§e§lБерёзовые листья§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LEAVES-3:
+    default: "§5§l[§e§lЛистья тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SPONGE-0:
+    default: "§5§l[§e§lГубка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SPONGE-1:
+    default: "§5§l[§e§lМокрая губка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GLASS-1:
+    default: "§5§l[§e§lСтекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LAPIS_ORE-0:
+    default: "§5§l[§e§lЛазуритовая руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LAPIS_BLOCK-0:
+    default: "§5§l[§e§lЛазуритовый блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DISPENSER-0:
+    default: "§5§l[§e§lРаздатчик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SANDSTONE-0:
+    default: "§5§l[§e§lПесчаник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SANDSTONE-1:
+    default: "§5§l[§e§lРезной песчаник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SANDSTONE-2:
+    default: "§5§l[§e§lГладкий песчаник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NOTE_BLOCK-0:
+    default: "§5§l[§e§lНотный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"

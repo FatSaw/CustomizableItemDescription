@@ -31,6 +31,8 @@ import io.netty.channel.ChannelDuplexHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.ChannelPromise;
+import net.minecraft.server.v1_12_R1.Container;
+import net.minecraft.server.v1_12_R1.ContainerAnvil;
 import net.minecraft.server.v1_12_R1.PacketDataSerializer;
 import net.minecraft.server.v1_12_R1.PacketPlayOutSetSlot;
 import net.minecraft.server.v1_12_R1.PacketPlayOutWindowItems;
@@ -56,115 +58,155 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 			unregisterHandler(player);
 		}
 	}
-
-	protected void clear(ItemStack itemstack) {
-		if(!itemstack.getType().equals(Material.AIR)) {
-			ItemMeta meta = itemstack.getItemMeta();
-			if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
-				List<String> lore = new ArrayList<String>();
-				short i = 0;
-				while(i<meta.getLore().size()) {
-					String line = meta.getLore().get(i);
-					if(line.startsWith("§f§f§f§r")) {
-						break;
+	
+	protected void clearItemName(net.minecraft.server.v1_12_R1.ItemStack nmsitem) {
+		ItemStack itemstack = nmsitem.asBukkitMirror();
+		if(nmsitem.hasName()) {
+			String displayname = itemstack.getItemMeta().getDisplayName();
+			if(displayname.startsWith("§R§r")) {
+				nmsitem.s();
+			} else {
+				if(lang.isString("items.".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData())).concat(".custom"))) {
+					String newdisplayname = lang.getString("items.".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData())).concat(".custom"));
+					if(newdisplayname.contains("%displayname%")) {
+						try{
+							int startindex = newdisplayname.lastIndexOf("%displayname%");
+							int endindext = newdisplayname.lastIndexOf(newdisplayname.substring(startindex+13));
+							String itemnameend = newdisplayname.substring(endindext);
+							if(displayname.contains(itemnameend)) {
+								nmsitem.g(displayname.substring(startindex, displayname.lastIndexOf(itemnameend)));
+							}
+						} catch (Exception e) {
+							nmsitem.s();
+						}
 					} else {
-						lore.add(line);
+						nmsitem.s();
 					}
-					++i;
+				} else {
+					//nmsitem.s();
 				}
-				meta.setLore(lore);
-				itemstack.setItemMeta(meta);
 			}
+		}
+	}
+	
+	protected void clear(net.minecraft.server.v1_12_R1.ItemStack nmsitem) {
+		ItemStack itemstack = nmsitem.asBukkitMirror();
+		clearItemName(nmsitem);
+		ItemMeta meta = itemstack.getItemMeta();
+		if(meta.hasLore() && meta.getLore().get(meta.getLore().size()-1).endsWith("§0§0§0§r")) {
+			List<String> lore = new ArrayList<String>();
+			short i = 0;
+			while(i<meta.getLore().size()) {
+				String line = meta.getLore().get(i);
+				if(line.startsWith("§f§f§f§r")) {
+					break;
+				} else {
+					lore.add(line);
+				}
+				++i;
+			}
+			meta.removeItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+			meta.removeItemFlags(ItemFlag.HIDE_ENCHANTS);
+			meta.removeItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+			meta.setLore(lore);
+			itemstack.setItemMeta(meta);
 		}
 	}
 
 	protected void deeper(net.minecraft.server.v1_12_R1.ItemStack nmsitem) {
 		ItemStack itemstack = nmsitem.asBukkitMirror();
-		if(!itemstack.getType().equals(Material.AIR)) {
-			ItemMeta meta = itemstack.getItemMeta();
-			boolean hoa = false;
-			List<String> infolore = new ArrayList<String>();
-			if(itemstack.getType().equals(Material.POTION) || itemstack.getType().equals(Material.SPLASH_POTION) || itemstack.getType().equals(Material.LINGERING_POTION) || itemstack.getType().equals(Material.TIPPED_ARROW)) {
-				PotionMeta potionmeta = (PotionMeta) itemstack.getItemMeta();
-				List<PotionEffect> effects = getPotionEffects(potionmeta);
-				if(!effects.isEmpty()) {
-					hoa = true;
-					meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
-					for(PotionEffect effect : effects) {
-						if(effect.getDuration()>0 && effect.getAmplifier()>-1) {
-							short amplifier = (short) effect.getAmplifier();
-							++amplifier;
-							short duration = (short) effect.getDuration();
-							if(itemstack.getType().equals(Material.LINGERING_POTION)) duration=(short) (duration>>2);
-							if(itemstack.getType().equals(Material.TIPPED_ARROW)) duration=(short) (duration>>3);
-							String effectname = effect.getType().getName();
-							String ramplifier = RomanNumeral.getwithspace(amplifier);
-							String rduration = getTimeLeftFromTicks(duration);
-							if(effectname!=null && !effectname.isEmpty()) {
-								infolore.add(lang.getString("effects.".concat(effectname), "§r".concat(effectname).concat(ramplifier).concat(" ").concat(rduration)).replaceAll("%amplifier%", ramplifier).replaceAll("%duration%", rduration));
-							}
-						}
-					}
-				}
+		boolean hoa = false;
+		ItemMeta meta = itemstack.getItemMeta();
+		if(meta.hasDisplayName()) {
+			if(!meta.getDisplayName().startsWith("§R§r")) {
+				String newdisplayname = lang.getString("items.".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData())).concat(".custom"), "§c§l".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData())).concat(" ").concat(meta.getDisplayName())).replace("%displayname%", meta.getDisplayName());
+				meta.setDisplayName(newdisplayname);
 			}
-			if(itemstack.getType().equals(Material.ENCHANTED_BOOK)) {
+		} else {
+			String newdisplayname = "§R§r".concat(lang.getString("items.".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData())).concat(".default"), "§4§l".concat(itemstack.getType().name()).concat("-").concat(Byte.toString(itemstack.getData().getData()))));
+			meta.setDisplayName(newdisplayname);
+		}
+		List<String> infolore = new ArrayList<String>();
+		if(itemstack.getType().equals(Material.POTION) || itemstack.getType().equals(Material.SPLASH_POTION) || itemstack.getType().equals(Material.LINGERING_POTION) || itemstack.getType().equals(Material.TIPPED_ARROW)) {
+			PotionMeta potionmeta = (PotionMeta) itemstack.getItemMeta();
+			List<PotionEffect> effects = getPotionEffects(potionmeta);
+			if(!effects.isEmpty()) {
 				hoa = true;
-				EnchantmentStorageMeta enchantmentmeta = (EnchantmentStorageMeta) meta;
 				meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
-				Map<Enchantment,Integer> enchs = enchantmentmeta.getStoredEnchants();
-				for(Enchantment ench : enchs.keySet()) {
-					short level = 0;
-					if(enchs.containsKey(ench)) {
-						level = enchs.get(ench).shortValue();
-						if(level>0) {
-							String rlevel = RomanNumeral.get(level);
-							String enchantmentname = ench.getName();
-							if(enchantmentname!=null && !enchantmentname.isEmpty()) {
-								infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
-							}
+				for(PotionEffect effect : effects) {
+					if(effect.getDuration()>0 && effect.getAmplifier()>-1) {
+						short amplifier = (short) effect.getAmplifier();
+						++amplifier;
+						short duration = (short) effect.getDuration();
+						if(itemstack.getType().equals(Material.LINGERING_POTION)) duration=(short) (duration>>2);
+						if(itemstack.getType().equals(Material.TIPPED_ARROW)) duration=(short) (duration>>3);
+						String effectname = effect.getType().getName();
+						String ramplifier = RomanNumeral.getwithspace(amplifier);
+						String rduration = getTimeLeftFromTicks(duration);
+						if(effectname!=null && !effectname.isEmpty()) {
+							infolore.add(lang.getString("effects.".concat(effectname), "§r".concat(effectname).concat(ramplifier).concat(" ").concat(rduration)).replaceAll("%amplifier%", ramplifier).replaceAll("%duration%", rduration));
 						}
 					}
 				}
-			}
-			if(meta.hasEnchants()) {
-				hoa = true;
-				meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-				Map<Enchantment,Integer> enchs = meta.getEnchants();
-				for(Enchantment ench : enchs.keySet()) {
-					short level = 0;
-					if(enchs.containsKey(ench)) {
-						level = enchs.get(ench).shortValue();
-						if(level>0) {
-							String rlevel = RomanNumeral.get(level);
-							String enchantmentname = ench.getName();
-							if(enchantmentname!=null && !enchantmentname.isEmpty()) {
-								infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
-							}
-						}
-					}
-				}
-			}
-			if(meta.isUnbreakable()) {
-				hoa = true;
-				meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
-				infolore.add(lang.getString("unbreakable","§rUNBREAKABLE"));
-			}
-			if(hoa&&!infolore.isEmpty()) {
-				List<String> lore = new ArrayList<String>();
-				if(meta.hasLore()) {
-					lore = meta.getLore();
-				}
-				lore.add("§f§f§f§r".concat(infolore.get(0)));
-				byte i = 1;
-				while (i<infolore.size()&&i>0) {
-					lore.add(infolore.get(i));
-					++i;
-				}
-				lore.set(lore.size()-1, lore.get(lore.size()-1).concat("§0§0§0§r"));
-				meta.setLore(lore);
-				itemstack.setItemMeta(meta);
 			}
 		}
+		if(itemstack.getType().equals(Material.ENCHANTED_BOOK)) {
+			hoa = true;
+			EnchantmentStorageMeta enchantmentmeta = (EnchantmentStorageMeta) meta;
+			meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+			Map<Enchantment,Integer> enchs = enchantmentmeta.getStoredEnchants();
+			for(Enchantment ench : enchs.keySet()) {
+				short level = 0;
+				if(enchs.containsKey(ench)) {
+					level = enchs.get(ench).shortValue();
+					if(level>0) {
+						String rlevel = RomanNumeral.get(level);
+						String enchantmentname = ench.getName();
+						if(enchantmentname!=null && !enchantmentname.isEmpty()) {
+							infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
+						}
+					}
+				}
+			}
+		}
+		if(meta.hasEnchants()) {
+			hoa = true;
+			meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+			Map<Enchantment,Integer> enchs = meta.getEnchants();
+			for(Enchantment ench : enchs.keySet()) {
+				short level = 0;
+				if(enchs.containsKey(ench)) {
+					level = enchs.get(ench).shortValue();
+					if(level>0) {
+						String rlevel = RomanNumeral.get(level);
+						String enchantmentname = ench.getName();
+						if(enchantmentname!=null && !enchantmentname.isEmpty()) {
+							infolore.add(lang.getString("enchantments.".concat(enchantmentname), "§r".concat(enchantmentname).concat(" ").concat(rlevel)).replaceAll("%value%", rlevel));
+						}
+					}
+				}
+			}
+		}
+		if(meta.isUnbreakable()) {
+			hoa = true;
+			meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+			infolore.add(lang.getString("unbreakable","§rUNBREAKABLE"));
+		}
+		if(hoa&&!infolore.isEmpty()) {
+			List<String> lore = new ArrayList<String>();
+			if(meta.hasLore()) {
+				lore = meta.getLore();
+			}
+			lore.add("§f§f§f§r".concat(infolore.get(0)));
+			byte i = 1;
+			while (i<infolore.size()&&i>0) {
+				lore.add(infolore.get(i));
+				++i;
+			}
+			lore.set(lore.size()-1, lore.get(lore.size()-1).concat("§0§0§0§r"));
+			meta.setLore(lore);
+		}
+		itemstack.setItemMeta(meta);
 	}
 
 	private String getTimeLeftFromTicks(int duration) {
@@ -327,9 +369,10 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 					PacketPlayInSetCreativeSlot info = (PacketPlayInSetCreativeSlot) packet;
 					PacketDataSerializer packetdataserializer = new PacketDataSerializer(Unpooled.buffer(0));
 					info.b(packetdataserializer);
-					packetdataserializer.writeShort(packetdataserializer.readShort());
+					short slotid = packetdataserializer.readShort();
+					packetdataserializer.writeShort(slotid);
 					net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
-					clear(item.asBukkitMirror());
+					if(!item.isEmpty()) clear(item);
 			        packetdataserializer.a(item);
 			        info.a(packetdataserializer);
 				}
@@ -341,24 +384,46 @@ public class CustomizableItemDescription extends JavaPlugin implements Listener 
 					PacketPlayOutWindowItems info = (PacketPlayOutWindowItems) packet;
 					PacketDataSerializer packetdataserializer = new PacketDataSerializer(Unpooled.buffer(0));
 					info.b(packetdataserializer);
-					packetdataserializer.writeByte(packetdataserializer.readUnsignedByte());
+					short invid = packetdataserializer.readUnsignedByte();
+					packetdataserializer.writeByte(invid);
 			        short inventorysize = packetdataserializer.readShort();
 			        packetdataserializer.writeShort(inventorysize);
-			        for (int i = 0; i < inventorysize; ++i) {
-			        	net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
-			        	deeper(item);
-			            packetdataserializer.a(item);
-			        }
+			        Container container = ((CraftPlayer)player).getHandle().activeContainer;
+					if(container instanceof ContainerAnvil && invid==container.windowId) {
+						{
+							net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
+							if(!item.isEmpty()) clearItemName(item);
+							packetdataserializer.a(item);
+						}
+						for (int i = 1; i < inventorysize; ++i) {
+				        	net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
+				        	if(!item.isEmpty()) deeper(item);
+				            packetdataserializer.a(item);
+				        }
+					} else {
+						for (int i = 0; i < inventorysize; ++i) {
+				        	net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
+				        	if(!item.isEmpty()) deeper(item);
+				            packetdataserializer.a(item);
+				        }
+					}
 			        info.a(packetdataserializer);
 				}
 				if (packet instanceof PacketPlayOutSetSlot) {
 					PacketPlayOutSetSlot info = (PacketPlayOutSetSlot) packet;
 					PacketDataSerializer packetdataserializer = new PacketDataSerializer(Unpooled.buffer(0));
 					info.b(packetdataserializer);
-					packetdataserializer.writeByte(packetdataserializer.readUnsignedByte());
-					packetdataserializer.writeShort(packetdataserializer.readShort());
+					short invid = packetdataserializer.readUnsignedByte();
+					short slotid = packetdataserializer.readShort();
+					packetdataserializer.writeByte(invid);
+					packetdataserializer.writeShort(slotid);
 					net.minecraft.server.v1_12_R1.ItemStack item = packetdataserializer.k();
-					deeper(item);
+					if(!item.isEmpty()) {
+						Container container = ((CraftPlayer)player).getHandle().activeContainer;
+						if(container instanceof ContainerAnvil && invid==container.windowId && slotid == 0) {
+							clearItemName(item);
+						} else deeper(item);
+					}
 			        packetdataserializer.a(item);
 					info.a(packetdataserializer);
 				}
