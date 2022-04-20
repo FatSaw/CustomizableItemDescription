@@ -206,3 +206,429 @@ items:
   NOTE_BLOCK-0:
     default: "§5§l[§e§lНотный блок§5§l]"
     custom: "§5§l(§e§l%displayname%§5§l)"
+  POWERED_RAIL-0:
+    default: "§5§l[§e§lЭнергорельсы§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DETECTOR_RAIL-0:
+    default: "§5§l[§e§lРельсы с датчиком§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PISTON_STICKY_BASE-0:
+    default: "§5§l[§e§lЛипкий поршень§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WEB-0:
+    default: "§5§l[§e§lПаутина§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LONG_GRASS-1:
+    default: "§5§l[§e§lТрава§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LONG_GRASS-2:
+    default: "§5§l[§e§lПапоротник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DEAD_BUSH-2:
+    default: "§5§l[§e§lМёртвый куст§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PISTON_BASE-0:
+    default: "§5§l[§e§lПоршень§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-0:
+    default: "§5§l[§e§lБелая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-1:
+    default: "§5§l[§e§lОранжевая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-2:
+    default: "§5§l[§e§lПурпурная шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-3:
+    default: "§5§l[§e§lГолубая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-4:
+    default: "§5§l[§e§lЖёлтая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-5:
+    default: "§5§l[§e§lЛаймовая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-6:
+    default: "§5§l[§e§lРозовая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-7:
+    default: "§5§l[§e§lСерая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-8:
+    default: "§5§l[§e§lСветло-серая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-9:
+    default: "§5§l[§e§lБирюзовая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-10:
+    default: "§5§l[§e§lФиолетовая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-11:
+    default: "§5§l[§e§lСиняя шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-12:
+    default: "§5§l[§e§lКоричневая шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-13:
+    default: "§5§l[§e§lЗелёная шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-14:
+    default: "§5§l[§e§lКрасная шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOL-15:
+    default: "§5§l[§e§lЧёрная шерсть§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  YELLOW_FLOWER-0:
+    default: "§5§l[§e§lОдуванчик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-0:
+    default: "§5§l[§e§lМак§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-1:
+    default: "§5§l[§e§lСиняя орхидея§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-2:
+    default: "§5§l[§e§lЛук-батун§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-3:
+    default: "§5§l[§e§lГолубой василёк§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-4:
+    default: "§5§l[§e§lКрасный тюльпан§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-5:
+    default: "§5§l[§e§lОраньжевый тюльпан§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-6:
+    default: "§5§l[§e§lБелый тюльпан§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-7:
+    default: "§5§l[§e§lРозовый тюлбпан§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_ROSE-8:
+    default: "§5§l[§e§lРомашка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BROWN_MUSHROOM-0:
+    default: "§5§l[§e§lГриб§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_MUSHROOM-0:
+    default: "§5§l[§e§lГриб§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GOLD_BLOCK-0:
+    default: "§5§l[§e§lЗолотой блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  IRON_BLOCK-0:
+    default: "§5§l[§e§lЖелезный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-0:
+    default: "§5§l[§e§lКаменная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-1:
+    default: "§5§l[§e§lПесчаниковая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-2:
+    default: "§5§l[§e§lДеревянная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-3:
+    default: "§5§l[§e§lБулыжная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-4:
+    default: "§5§l[§e§lКирпичная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-5:
+    default: "§5§l[§e§lПлита из каменных кирпичей§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-6:
+    default: "§5§l[§e§lНезеритовая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STEP-7:
+    default: "§5§l[§e§lКварцевая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BRICK-0:
+    default: "§5§l[§e§lКирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  TNT-0:
+    default: "§5§l[§e§lДинамит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BOOKSHELF-0:
+    default: "§5§l[§e§lКнижная полка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MOSSY_COBBLESTONE-0:
+    default: "§5§l[§e§lЗамшелый булыжник§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  OBSIDIAN-0:
+    default: "§5§l[§e§lОбсидиан§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  TORCH-0:
+    default: "§5§l[§e§lФакел§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MOB_SPAWNER-0:
+    default: "§5§l[§e§lРассадник монстров§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STAIRS-0:
+    default: "§5§l[§e§lДубовые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CHEST-0:
+    default: "§5§l[§e§lСундук§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DIAMOND_ORE-0:
+    default: "§5§l[§e§lАлмазная руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DIAMOND_BLOCK-0:
+    default: "§5§l[§e§lАлмазный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WORKBENCH-0:
+    default: "§5§l[§e§lВерстак§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SOIL-0:
+    default: "§5§l[§e§lПашня§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  FURNACE-0:
+    default: "§5§l[§e§lПечь§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LADDER-0:
+    default: "§5§l[§e§lЛестница§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RAILS-0:
+    default: "§5§l[§e§lРельсы§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COBBLESTONE_STAIRS-0:
+    default: "§5§l[§e§lБулыжные ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LEVER-0:
+    default: "§5§l[§e§lРычаг§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE_PLATE-0:
+    default: "§5§l[§e§lКаменная нажимная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_PLATE-0:
+    default: "§5§l[§e§lДеревянная нажимная плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  REDSTONE_ORE-0:
+    default: "§5§l[§e§lРедстоуновая руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  REDSTONE_TORCH_ON-0:
+    default: "§5§l[§e§lРедстоуновый факел§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STONE_BUTTON-0:
+    default: "§5§l[§e§lКнопка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SONW-0:
+    default: "§5§l[§e§lСнег§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ICE-0:
+    default: "§5§l[§e§lЛёд§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SONW_BLOCK-0:
+    default: "§5§l[§e§lСнег§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CACTUS-0:
+    default: "§5§l[§e§lКактус§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CLAY-0:
+    default: "§5§l[§e§lГлина§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  JUKEBOX-0:
+    default: "§5§l[§e§lПроигрыватель§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  FENCE-0:
+    default: "§5§l[§e§lДубовый забор§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PUMPKIN-0:
+    default: "§5§l[§e§lТыква§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NETHERRACK-0:
+    default: "§5§l[§e§lНезерит§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SOUL_SAND-0:
+    default: "§5§l[§e§lПесок душ§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GLOWSTONE-0:
+    default: "§5§l[§e§lСветокамень§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  JACK_O_LANTERN-0:
+    default: "§5§l[§e§lСветильник джека§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-0:
+    default: "§5§l[§e§lБелое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-1:
+    default: "§5§l[§e§lОранжевое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-2:
+    default: "§5§l[§e§lПурпурное стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-3:
+    default: "§5§l[§e§lГолубое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-4:
+    default: "§5§l[§e§lЖёлтое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-5:
+    default: "§5§l[§e§lЛаймовое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-6:
+    default: "§5§l[§e§lРозовое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-7:
+    default: "§5§l[§e§lСерое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-8:
+    default: "§5§l[§e§lСветло-серое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-9:
+    default: "§5§l[§e§lБирюзовое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-10:
+    default: "§5§l[§e§lФиолетовое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-11:
+    default: "§5§l[§e§lСинее стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-12:
+    default: "§5§l[§e§lКоричневое стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-13:
+    default: "§5§l[§e§lЗелёное стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-14:
+    default: "§5§l[§e§lКрасное стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STAINED_GLASS-15:
+    default: "§5§l[§e§lЧёрное стекло§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  TRAP_DOOR-0:
+    default: "§5§l[§e§lЛюк§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-0:
+    default: "§5§l[§e§lКамень с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-1:
+    default: "§5§l[§e§lБулыжник с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-2:
+    default: "§5§l[§e§lКаменный кирпич с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-3:
+    default: "§5§l[§e§lЗамшелый каменный кирпич с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-4:
+    default: "§5§l[§e§lПотрескавшийся каменный кирпич с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MONSTER_EGGS-5:
+    default: "§5§l[§e§lРезной каменный кирпич с монстрами§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SMOOTH_BRICK-0:
+    default: "§5§l[§e§lКаменные кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SMOOTH_BRICK-1:
+    default: "§5§l[§e§lЗамшелые каменные кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SMOOTH_BRICK-2:
+    default: "§5§l[§e§lПотрескавшиеся каменные кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SMOOTH_BRICK-3:
+    default: "§5§l[§e§lРезные каменные кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  HUGE_MUSHROOM_1-0:
+    default: "§5§l[§e§lГриб§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  HUGE_MUSHROOM_2-0:
+    default: "§5§l[§e§lГриб§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  IRON_FENCE-0:
+    default: "§5§l[§e§lЖелезные прутья§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  THIN_GLASS-0:
+    default: "§5§l[§e§lСтеклянная панель§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MELON_BLOCK-0:
+    default: "§5§l[§e§lАрбуз§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  VINE-0:
+    default: "§5§l[§e§lЛианы§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  FENCE_GATE-0:
+    default: "§5§l[§e§lДубовая калитка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BRICK_STAIRS-0:
+    default: "§5§l[§e§lКирпичные ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SMOOTH_STAIRS-0:
+    default: "§5§l[§e§lСтупеньки из каменного кирпича§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MYCEL-0:
+    default: "§5§l[§e§lМицелий§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WATER_LILY-0:
+    default: "§5§l[§e§lКувшинка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NETHER_BRICK-0:
+    default: "§5§l[§e§lНезеритовые кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NETHER_FENCE-0:
+    default: "§5§l[§e§lНезеритовый забор§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NETHER_BRICK_STAIRS-0:
+    default: "§5§l[§e§lНезеритовые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ENCHANTMENT_TABLE-0:
+    default: "§5§l[§e§lЧародейский стол§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ENDER_PORTAL_FRAME-0:
+    default: "§5§l[§e§lПортал в Энд§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ENDER_STONE-0:
+    default: "§5§l[§e§lЭндерняк§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DRAGON_EGG-0:
+    default: "§5§l[§e§lЯйцо дракона§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  REDSTONE_LAMP_OFF-0:
+    default: "§5§l[§e§lРедстоуновый фонарь§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-0:
+    default: "§5§l[§e§lДубовая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-1:
+    default: "§5§l[§e§lЕловая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-2:
+    default: "§5§l[§e§lБерёзовая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-3:
+    default: "§5§l[§e§lПлита из тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-4:
+    default: "§5§l[§e§lАкациевая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WOOD_STEP-5:
+    default: "§5§l[§e§lПлита из тёмного дуба§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SANDSTONE_STAIRS-0:
+    default: "§5§l[§e§lПесчаниковые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  EMERALD_ORE-0:
+    default: "§5§l[§e§lИзумрудная руда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ENDER_CHEST-0:
+    default: "§5§l[§e§lЭндер-сундук§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  TRIPWIRE_HOOK-0:
+    default: "§5§l[§e§lКрюк§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  EMERALD_BLOCK-0:
+    default: "§5§l[§e§lИзумрудный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SPRUNCE_WOOD_STAIRS-0:
+    default: "§5§l[§e§lЕловые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BITCH_WOOD_STAIRS-0:
+    default: "§5§l[§e§lБерёзовые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  JUNGLE_WOOD_STAIRS-0:
+    default: "§5§l[§e§lСтупеньки из тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COMMAND-0:
+    default: "§5§l[§e§lКомандный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
