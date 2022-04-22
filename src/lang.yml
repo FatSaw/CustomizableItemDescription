@@ -674,6 +674,24 @@ items:
   HOPPER-0:
     default: "§5§l[§e§lВоронка§5§l]"
     custom: "§5§l(§e§l%displayname%§5§l)"
+  QUARTZ_BLOCK-0:
+    default: "§5§l[§e§lКварцевый блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  QUARTZ_BLOCK-1:
+    default: "§5§l[§e§lРезной кварцевый блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  QUARTZ_BLOCK-2:
+    default: "§5§l[§e§lКварцевая колонна§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  QUARTZ_STAIRS-0:
+    default: "§5§l[§e§lКварцевые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ACTIVATOR_RAIL-0:
+    default: "§5§l[§e§lАктивирующие рельсы§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DROPPER-0:
+    default: "§5§l[§e§lВыбрасыватель§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
   STAINED_CLAY-0:
     default: "§5§l[§e§lБелая керамика§5§l]"
     custom: "§5§l(§e§l%displayname%§5§l)"
@@ -919,4 +937,262 @@ items:
     custom: "§5§l(§e§l%displayname%§5§l)"
   ACACIA_FENCE_GATE-0:
     default: "§5§l[§e§lАкациевая калитка§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SPRUCE_FENCE-0:
+    default: "§5§l[§e§lЕловый забор§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BIRCH_FENCE-0:
+    default: "§5§l[§e§lБерёзовый забор§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  JUNGLE_FENCE-0:
+    default: "§5§l[§e§lЗабор из тропического дерева§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  DARK_OAK_FENCE-0:
+    default: "§5§l[§e§lЗабор из тёмного дуба§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ACACIA_FENCE-0:
+    default: "§5§l[§e§lАкациевый забор§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  END_ROD-0:
+    default: "§5§l[§e§lСтержень Энда§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CHORUS_PLANT-0:
+    default: "§5§l[§e§lХорус§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CHORUS_FLOWER-0:
+    default: "§5§l[§e§lЦветок хоруса§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPUR_BLOCK-0:
+    default: "§5§l[§e§lПурпур§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPUR_PILLAR-0:
+    default: "§5§l[§e§lПурпуровый пилон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPUR_STAIRS-0:
+    default: "§5§l[§e§lПурпуровые ступеньки§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPUR_SLAB-0:
+    default: "§5§l[§e§lПурпуровая плита§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  END_BRICKS-0:
+    default: "§5§l[§e§lЭндерняковые кирпичи§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GRASS_PATH-0:
+    default: "§5§l[§e§lТропа§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COMMAND_REPEATING-0:
+    default: "§5§l[§e§lПовторяющий командный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  COMMAND_CHAIN-0:
+    default: "§5§l[§e§lПоследовательный командный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MAGMA-0:
+    default: "§5§l[§e§lМагма§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  NETHER_WART_BLOCK-0:
+    default: "§5§l[§e§lБлок нароста их Незера§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_NETHER_BRICK-0:
+    default: "§5§l[§e§lКрасный незеритовый кирпич§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BONE_BLOCK-0:
+    default: "§5§l[§e§lКостный блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STRUCTURE_VOID-0:
+    default: "§5§l[§e§lПустой блок§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  OBSERVER-0:
+    default: "§5§l[§e§lНаблюдатель§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WHITE_SHULKER_BOX-0:
+    default: "§5§l[§e§lБелый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ORANGE_SHULKER_BOX-0:
+    default: "§5§l[§e§lОранжевый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MAGENTA_SHULKER_BOX-0:
+    default: "§5§l[§e§lПурпурный шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LIGHT_BLUE_SHULKER_BOX-0:
+    default: "§5§l[§e§lГолубой шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  YELLOW_SHULKER_BOX-0:
+    default: "§5§l[§e§lЖёлтый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LIME_SHULKER_BOX-0:
+    default: "§5§l[§e§lЛаймовый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PINK_SHULKER_BOX-0:
+    default: "§5§l[§e§lРозовый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GRAY_SHULKER_BOX-0:
+    default: "§5§l[§e§lСерый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SILVER_SHULKER_BOX-0:
+    default: "§5§l[§e§lСветло-серый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CYAN_SHULKER_BOX-0:
+    default: "§5§l[§e§lБирюзовый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPLE_SHULKER_BOX-0:
+    default: "§5§l[§e§lФиолетовый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BLUE_SHULKER_BOX-0:
+    default: "§5§l[§e§lСиний шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BROWN_SHULKER_BOX-0:
+    default: "§5§l[§e§lКоричневый шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GREEN_SHULKER_BOX-0:
+    default: "§5§l[§e§lЗелёный шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_SHULKER_BOX-0:
+    default: "§5§l[§e§lКрасный шалкеровый ящик§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  WHITE_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lБелая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  ORANGE_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lОранжевая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  MAGENTA_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lПурпурная глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LIGHT_BLUE_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lГолубая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  YELLOW_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lЖёлтая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  LIME_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lЛаймовая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PINK_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lРозовая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GRAY_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lСерая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  SILVER_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lСветло-серая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CYAN_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lБирюзовая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  PURPLE_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lФиолетовая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BLUE_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lСиняя глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BROWN_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lКоричневая глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  GREEN_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lЗелёная глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  RED_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lКрасная глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  BLACK_GLAZED_TERRACOTTA-0:
+    default: "§5§l[§e§lЧёрная глазурованная керамика§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-0:
+    default: "§5§l[§e§lБелый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-1:
+    default: "§5§l[§e§lОранжевый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-2:
+    default: "§5§l[§e§lПурпурный бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-3:
+    default: "§5§l[§e§lГолубой бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-4:
+    default: "§5§l[§e§lЖёлтый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-5:
+    default: "§5§l[§e§lЛаймовый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-6:
+    default: "§5§l[§e§lРозовый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-7:
+    default: "§5§l[§e§lСерый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-8:
+    default: "§5§l[§e§lСветло-серый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-9:
+    default: "§5§l[§e§lБирюзовый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-10:
+    default: "§5§l[§e§lФиолетовый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-11:
+    default: "§5§l[§e§lСиний бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-12:
+    default: "§5§l[§e§lКоричневый бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-13:
+    default: "§5§l[§e§lЗелёный бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-14:
+    default: "§5§l[§e§lКрасный бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE-15:
+    default: "§5§l[§e§lЧёрный бетон§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-0:
+    default: "§5§l[§e§lБелый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-1:
+    default: "§5§l[§e§lОранжевый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-2:
+    default: "§5§l[§e§lПурпурный цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-3:
+    default: "§5§l[§e§lГолубой цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-4:
+    default: "§5§l[§e§lЖёлтый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-5:
+    default: "§5§l[§e§lЛаймовый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-6:
+    default: "§5§l[§e§lРозовый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-7:
+    default: "§5§l[§e§lСерый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-8:
+    default: "§5§l[§e§lСветло-серый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-9:
+    default: "§5§l[§e§lБирюзовый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-10:
+    default: "§5§l[§e§lФиолетовый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-11:
+    default: "§5§l[§e§lСиний цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-12:
+    default: "§5§l[§e§lКоричневый цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-13:
+    default: "§5§l[§e§lЗелёный цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-14:
+    default: "§5§l[§e§lКрасный цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  CONCRETE_POWDER-15:
+    default: "§5§l[§e§lЧёрный цемент§5§l]"
+    custom: "§5§l(§e§l%displayname%§5§l)"
+  STRUCTURE_BLOCK-0:
+    default: "§5§l[§e§lБлок-конструктор§5§l]"
     custom: "§5§l(§e§l%displayname%§5§l)"
